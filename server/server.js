@@ -21,11 +21,11 @@ app.get("/spotify_access_token", async (req, res, next) => {
 
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
-    header: {
+    headers: {
       Authorization: `Basic ${authString}`,
       "Content-Type": "application/x-www-form-urlencoded",
-      grant_type: "client_credentials",
     },
+    body: "grant_type=client_credentials",
   });
   const data = await response.json();
   console.log(data);
