@@ -51,7 +51,6 @@ const App = () => {
         });
         const data = await response.json();
         dispatch(receiveAccessToken(data.access_token));
-        console.log(data);
       } catch (err) {
         console.log(err);
         dispatch(receiveAccessTokenError());
